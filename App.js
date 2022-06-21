@@ -1,9 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import PropTypes from 'prop-types';
+import { Header } from 'react-native/Libraries/NewAppScreen';
+
+const Greeting = (props) => {
+  return <Text>Hi {props.name}</Text>;
+};
+
+Greeting.propTypes = {
+  name: PropTypes.string.isRequired
+};
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <Greeting name="World" />
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
